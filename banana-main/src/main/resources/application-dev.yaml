@@ -1,0 +1,44 @@
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/fly_banana?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    # initialization-mode: always
+    initia1Size: 5
+    minIdle: 5
+    maxActive: 20
+    maxNait: 60000
+    timcBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillisi: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poo1PrcparedStatements: true
+
+    filters: stat , wal1,1og4j
+    maxPoolPreparedStatcmentPerConnectionSizc: 20
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.s1owSqlMillis=500
+
+  redis:
+    #数据库索引
+    database: ${REDIS_DB:0}
+    host: ${REDIS_HOST:127.0.0.1}
+    port: ${REDIS_PORT:6379}
+    password: ${REDIS_PWD:}
+    #连接超时时间
+    timeout: 5000
+#aj:
+#  captcha:
+#    cache-type: redis
+##    cache-number: 1000
+##    # 偏移量
+##    slip-offset: 10
+##    # 请求次数一分钟限制
+##    req-frequency-limit-enable: true
+##    req-get-lock-limit: 5
+#    water-mark: \u006b\u0061\u0073\u0061\u006e\u0065
+#    type: default
